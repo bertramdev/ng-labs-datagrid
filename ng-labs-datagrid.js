@@ -13,13 +13,19 @@ angular.module('labsDatagrid', []).
 			scope: {
 			 	'columns': '=',
 			 	'pageFn': '&',
-			 	'rowTemplateUrl': '=',
 			 	'sort' : '=',
 			 	'filter': '=',
 			 	'rows': '='
 			}, // {} = isolate, true = child, false/undefined = no change
 			controller: function($scope, $element, $attrs, $transclude) {
 				$scope.sort = $scope.sort || {};
+
+				if ($scope.rows.toString() === '[object collection]') {
+					$scope.sort = $scope.rows.sort;
+					$scope.filter = $scope.rows.filter;
+					$scope.pageFn = $scope.rows.getPage;
+				}
+				
 				$scope.setSort = function (col) {
 					var dir = 'asc';
 					if ($scope.sort.column === col.column && $scope.sort.direction === 'asc') {
@@ -62,7 +68,7 @@ angular.module('labsDatagrid', []).
 	'<div class="footer"></div>' +
 	'</div>' +
 	'<style>' +
-	'tr.labs-datagrid div {' +
+	'tr.labs-datagrid > div {' +
 	'	display:table-cell;' +
 	'}' +
 	'</style>');
