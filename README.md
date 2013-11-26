@@ -35,7 +35,7 @@ adding a datagrid to your page
 labs-datagrid expects you to write your own row markup. Due to some strange angular/browser things with TR we get to use the div tag for our cells (the datagrid includes a style that changes the display of the first level of divs to table-cell)
 
 ```
-<labs-datagrid>
+<labs-datagrid columns="columns" rows="rows" sort="sort" filter="filter" pageFn="pageFn">
 <div>{{row.firstName}}</div><div>{{row.lastName}}</div>
 </labs-datagrid>
 ```
