@@ -1,0 +1,26 @@
+{
+  "name": "angular-labs-datagrid",
+  "main": "ng-labs-datagrid.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bertramdev/ng-labs-datagrid",
+  "authors": [
+    "Andy Warner <awarner@bertramcapital.com>"
+  ],
+  "description": "a datagrid directive for angular",
+  "keywords": [
+    "angular",
+    "datagrid",
+    "directive",
+    "grid",
+    "array",
+    "collection"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
